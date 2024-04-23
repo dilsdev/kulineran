@@ -1,28 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-view />
+    <FooterComponent v-if="showFooter" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import FooterComponent from "@/components/FooterComponent.vue";
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    FooterComponent,
+  },
+  data() {
+    return {
+      showFooter: true, // Atur kondisi awal sesuai kebutuhan
+    };
+  },
+  watch: {
+    // Memantau perubahan pada route
+    $route() {
+      // Lakukan pengecekan pada path route
+      if (this.$route.name === "Tampilan404View") {
+        this.showFooter = false; // Jika path adalah Tampilan404View, sembunyikan footer
+      } else {
+        this.showFooter = true; // Tampilkan footer untuk route lainnya
+      }
+    },
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

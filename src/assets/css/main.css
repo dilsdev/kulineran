@@ -1,0 +1,39 @@
+#app {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.router-link-exact-active {
+    font-weight: bold;
+}
+
+.btn-success {
+    background-color: #4EB883;
+}
+
+.badge-success {
+    background-color: #4EB883;
+}
+
+.card-product {
+    border-radius: 15px;
+}
+
+.card-img-top {
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.breadcrumb {
+    background-color: transparent;
+    padding: 0;
+}
+
+.breadcrumb-item.active {
+    font-weight: bold;
+    color: black;
+}
+
+
+.img-fluid {
+    border-radius: 15px;
+}
